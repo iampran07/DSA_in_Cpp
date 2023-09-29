@@ -14,7 +14,9 @@ int main()
     s1.push(30);
     s1.push(40);
     s1.push(50);
-   
+
+    //push and pop --> log(n)
+    //top --> O(1)
    //to print
    while(!s1.empty()){
     cout<<s1.top()<<endl;
