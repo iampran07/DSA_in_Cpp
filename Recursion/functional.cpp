@@ -3,7 +3,7 @@ using namespace std;
 
 //function is recursively calling itself
 //will return value 
-
+//O(N)
 int print(int n){
     if(n<1)
         return 0;
