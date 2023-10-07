@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+
+
+//hasing is method of prefetching and storing
+//basic example to count character of string by mapping them in array.
+//at max --> 256 characters.
+//ASCII VALUES: 'a'-'z' --> 97-122
+//'A'-'Z' --> 65-90
+
+int main(){
+    string s;
+    cin>>s;
+    //prefetching method
+    
+    int hash[26]={0}; //just beacuse there are 26 lower characters.
+    
+    for(int i=0;i<s.size();i++){
+        hash[s[i]-'a'] +=1;
+    }
+    
+    
+    //fetching method
+    
+    int q;
+    cin>>q;
+    while(q--){
+        char ch;
+        cin>>ch;
+        cout<<hash[ch-'a']<<endl;
+    }
+}
