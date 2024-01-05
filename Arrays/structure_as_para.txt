@@ -1,0 +1,69 @@
+//Structure as a parameter
+//1.Call by value
+
+#include <iostream>
+using namespace std;
+
+struct rectangle{
+        int length=10,breadth=20;
+};
+
+void fun(struct rectangle r1){
+    cout<<r1.length<<endl<<r1.breadth;
+}
+
+int main()
+{
+    rectangle r;   
+    r.length=10,r.breadth=20;
+    fun(r);
+    return 0;
+}
+
+//2.Call by address
+#include <iostream>
+
+using namespace std;
+
+struct rectangle{
+        int length=10,breadth=20;
+};
+
+void fun(struct rectangle *r1){
+    r1->length=30;
+    r1->breadth=40;
+    cout<<"AFTER- "<<r1->length<<r1->breadth;
+}
+
+int main()
+{
+    rectangle r;   
+    r.length=10,r.breadth=20;
+    cout<<"BEfORE- "<<r.length<<" "<<r.breadth;
+    fun(&r);
+    return 0;
+}
+
+//3.Call by reference
+#include <iostream>
+
+using namespace std;
+
+struct rectangle{
+        int length=10,breadth=20;
+};
+
+void fun(struct rectangle &r1){
+    r1.length=30;
+    r1.breadth=40;
+    cout<<"AFTER- "<<r1.length<<r1.breadth;
+}
+
+int main()
+{
+    rectangle r;   
+    r.length=10,r.breadth=20;
+    cout<<"BEfORE- "<<r.length<<" "<<r.breadth;
+    fun(r);
+    return 0;
+}
